@@ -1,0 +1,268 @@
+/* Some color definitions */
+/* Some styling */
+body {
+  background: white;
+  color: black;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  font-family: arial;
+}
+
+sup {
+  color: #FF0080;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Important switch stuff */
+label {
+  width: 25px;
+  height: 14px;
+  background: lightgray;
+  display: inline-block;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  margin: 10px;
+}
+label:before, label:after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  left: 0;
+  transition: all .2s;
+}
+label:after {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+label:before {
+  background: lightgray;
+  transform: scale3d(0, 0, 1);
+}
+label:active:before {
+  transform: scale3d(3, 3, 1);
+  opacity: 0;
+}
+
+/*All the button/switched changes*/
+input[type=checkbox].switch {
+  display: none;
+}
+input[type=checkbox].switch:checked + label {
+  background: #FF0080;
+}
+input[type=checkbox].switch:checked + label:before, input[type=checkbox].switch:checked + label:after {
+  left: 14px;
+  background: #FF0080;
+}
+
+input[type=checkbox].switch.green {
+  display: none;
+}
+input[type=checkbox].switch.green:checked + label {
+  background: #FF0080;
+}
+input[type=checkbox].switch.green:checked + label:before, input[type=checkbox].switch.green:checked + label:after {
+  background: #FF0080;
+}
+
+input[type=checkbox].switch.red {
+  display: none;
+}
+input[type=checkbox].switch.red:checked + label {
+  background: #FF0080;
+}
+input[type=checkbox].switch.red:checked + label:before, input[type=checkbox].switch.red:checked + label:after {
+  background: #FF0080;
+}
+.line{
+	border-width: 2px;
+	border-top-color: black;
+
+}
+*/
+
+/* Unnecesary stuffs */
+body {
+  	background-color: white;
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url("http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3ZBw1xU1rKptJj_0jans920.woff2") format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
+/* Important stuffs */
+.menuButton {
+  	left: 0;
+	position: fixed;
+    margin-top: 27.5px;
+    margin-left: 15px;
+    z-index: 0;
+    cursor: pointer;
+    width: 50px;
+    height: 30px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    animation: 1.25s menuButton;
+}
+.menuBar {
+    width: 100%;
+    height: 3px;
+    background-color: #FF0080;
+    border-radius: 3px;
+}
+.menuBar:after, .menuBar:before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    border-radius: 3px;
+}
+.menuBar:after {
+    top: 10px;
+    background-color: #FF0080;
+}
+.menuBar:before {
+    top: 20px;
+    background-color: #FF0080;
+}
+@-webkit-keyframes menuButton {
+    0% {
+        left: -500px;
+    }
+    100% {
+        left: 0;
+    }
+}
+@keyframes menuButton {
+    0% {
+        left: -500px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.menu {
+    left: -340px;
+    height: 100%;
+    position: fixed;
+    width: 200px;
+    color: #fff;
+    margin: 0;
+    z-index: 900;
+    padding-top: 50px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.menu ul {
+    list-style-type: none;
+    display: inline;
+}
+.menu li a {
+    margin-top: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    background: #444;
+    color: #fff;
+		padding: 12px 15px;
+    opacity: .9;
+    filter: alpha(opacity=90);
+	font-family: "Open Sans";
+	display: inline-block;
+	position: relative;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.menu li .active {
+    background: #666;
+}
+.menu li a:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    opacity: 1;
+}
+.menu li a:hover:before, .menu li a:focus:before, .menu li a:active:before {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
+}
+.menu .item1 a:before {
+    background: #FF0080;
+}
+/*.menu .item2 a:before {
+    background: #47e5aa;
+}
+.menu .item3 a:before {
+    background: #BFE23D;
+}
+.menu .item4 a:before {
+    background: #D54431;
+}
+.menu .item5 a:before {
+    background: #e2913d;
+}
+.menu .item6 a:before {
+    background: #249FAF;
+}
+.menu .item7 a:before {
+    background: #bcbbb3;
+}
+*/
+.name {
+	color: #FF0080;
+	font-family: arial;
+	text-align: center;
+	font-weight: bold;
+	font-size: 50px;
+}
+
+
+
